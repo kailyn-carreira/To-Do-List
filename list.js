@@ -1,1 +1,2 @@
-let toDoList = [];
+let taskList = [];
+const listDisplay = document.querySelector();
