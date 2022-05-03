@@ -5,28 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <title>To-Do-List</title>
     <style src="list.css"></style>
+    <script defer src="list.js"></script>
 </head>
 <body>
     <h1>To-do List</h1>
     <button class="addTask">Add Task</button>
-    <form action="">
+    <form action="" data-new-task-form>
+            <label for="newTask">New Task List: </label>
+            <input type="text" class ="taskInput" data-new-Task>
         <div>
-            <label for="task">Enter Task: </label>
-            <input type="text" newTask name="task" id="name" required>
-        </div>
-        <div>
-            <input type ="submit" value="Add Task">
+            <button class="submit">Submit</button>
         </div>
     </form>
-    <ul displayList>
-        <li class="task"></li>
-        <li class="task"></li>
-        <li class="task">
-            <strong></strong>
-            <button class="edit"></button>
-            <button class="delete"></button>
-        </li>
-      </ul>
-    <script src="list.js"></script>
+    <ul class="toDo" data-taskList></ul>
 </body>
 </html>
