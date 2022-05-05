@@ -2,8 +2,9 @@ const newTaskInput = document.querySelector('[data-new-task-input]')
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const toDoList = document.querySelector('[data-task-list]')
 
+const LOCAL_STORAGE_TASK_KEY = 'task.lists'
 
-let currentTasks = [{id: 0, task: 'hello', isComplete: false}];
+let currentTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASK_KEY)) || []
 
 
 //This function creates the display of all the tasks and the buttons
@@ -60,7 +61,18 @@ newTaskForm.addEventListener('submit', e => {
     newTaskInput.value = "";
     currentTasks.push({ id: currentTasks.length, task: newTask, isComplete: false})
     display()
+    saveAndRender()
+    
 })
+
+function saveAndRender(){
+    save()
+    render()
+}
+
+function save() {
+    localStorage.setItem(LOCAL_STORAGE_TASK_KEY, JSON.stringify(currentTasks))
+}
 
 display();
 
