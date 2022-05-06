@@ -30,8 +30,8 @@ function display() {
 
         })
         taskDelete.addEventListener('click', e => {
-            currentTasks.splice(task.id, 1)
-            display()
+            currentTasks.splice(currentTasks.indexOf(task), 1)
+            saveAndDisplay()
         })
         taskEdit.addEventListener('click', e => {
             taskLi.removeChild(taskEdit)
@@ -40,9 +40,9 @@ function display() {
             const edit = document.querySelector(`[data-edit-${task.id}]`)
             editForm.addEventListener('submit', e => {
                 e.preventDefault()
-                currentTasks.splice(task.id, 1, {id: task.id, task: edit.value, isComplete: task.isComplete})
+                currentTasks.splice(currentTasks.indexOf(task), 1, {id: task.id, task: edit.value, isComplete: task.isComplete})
                 console.log(currentTasks)
-                display()
+                saveAndDisplay();
             })
         })
         taskLi.appendChild(taskStrong)
@@ -60,14 +60,12 @@ newTaskForm.addEventListener('submit', e => {
     const newTask = newTaskInput.value;
     newTaskInput.value = "";
     currentTasks.push({ id: currentTasks.length, task: newTask, isComplete: false})
-    display()
-    saveAndRender()
-    
+    saveAndDisplay()
 })
 
-function saveAndRender(){
+function saveAndDisplay(){
     save()
-    render()
+    display()
 }
 
 function save() {
