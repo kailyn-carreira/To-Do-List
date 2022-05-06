@@ -1,14 +1,12 @@
    
+   /* code from https://www.w3schools.com/howto/howto_js_todolist.asp
+   Some colors were changed like the background. Some code was removed because it was not necessary
+   for this to-do list. And other code was added.
    /* Include the padding and border in an element's total width and height */
-* {
-  box-sizing: border-box;
-}
 
-/* Remove margins and padding from the list */
-.listItem {
-  margin: 0;
-  padding: 0;
-}
+   
+
+
 
 /* Style the list items */
 .listItem{
@@ -44,7 +42,7 @@
 }
 
 /* Add a "checked" mark when clicked on */
-.listItem.checked::before {
+ul li.checked::before {
   content: '';
   position: absolute;
   border-color: #fff;
@@ -63,25 +61,23 @@
   right: 0;
   top: 0;
   padding: 12px 16px 12px 16px;
-  content: "\00d7";
-  display: "X";
 }
 
 .deleteItem:hover {
-  background-color: #f44336;
+  background-color: orange;
   color: white;
 }
 
 /* Style the header */
-.body {
-  background-color: #f44336;
+.header {
+  background-color: orange;
   padding: 30px 40px;
   color: white;
   text-align: center;
 }
 
 /* Clear floats after the header */
-.body:after {
+.header:after {
   content: "";
   display: table;
   clear: both;

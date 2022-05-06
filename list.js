@@ -22,7 +22,7 @@ function display() {
         taskStrong.innerText = `${task.task}`
         taskStrong.style.cursor = 'pointer'
         taskEdit.innerText = 'Edit'
-        taskDelete.innerText = 'Delete'
+        taskDelete.innerText = 'X'
         taskStrong.addEventListener('click', e => {
             task.isComplete = !task.isComplete
             if(task.isComplete)
@@ -64,6 +64,13 @@ newTaskForm.addEventListener('submit', e => {
     currentTasks.push({ id: currentTasks.length, task: newTask, isComplete: false})
     saveAndDisplay()
 })
+
+const list = document.querySelector('ul')
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'li') {
+    ev.target.classList.toggle('checked')
+  }
+}, false);
 
 function saveAndDisplay(){
     save()
