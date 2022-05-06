@@ -17,6 +17,8 @@ function display() {
         const taskStrong = document.createElement('strong')
         const taskEdit = document.createElement('button')
         const taskDelete = document.createElement('button')
+        taskLi.className = 'listItem'
+        taskDelete.className = 'deleteItem'
         taskStrong.innerText = `${task.task}`
         taskStrong.style.cursor = 'pointer'
         taskEdit.innerText = 'Edit'

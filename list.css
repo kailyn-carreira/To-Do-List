@@ -5,13 +5,13 @@
 }
 
 /* Remove margins and padding from the list */
-ul {
+.listItem {
   margin: 0;
   padding: 0;
 }
 
 /* Style the list items */
-ul li {
+.listItem{
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
@@ -27,24 +27,24 @@ ul li {
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
+.listItem:nth-child(odd) {
   background: #f9f9f9;
 }
 
 /* Darker background-color on hover */
-ul li:hover {
+.listItem:hover {
   background: #ddd;
 }
 
 /* When clicked on, add a background color and strike out text */
-ul li.checked {
+.listItem.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
 }
 
 /* Add a "checked" mark when clicked on */
-ul li.checked::before {
+.listItem.checked::before {
   content: '';
   position: absolute;
   border-color: #fff;
@@ -58,20 +58,22 @@ ul li.checked::before {
 }
 
 /* Style the close button */
-.close {
+.deleteItem {
   position: absolute;
   right: 0;
   top: 0;
   padding: 12px 16px 12px 16px;
+  content: "\00d7";
+  display: "X";
 }
 
-.close:hover {
+.deleteItem:hover {
   background-color: #f44336;
   color: white;
 }
 
 /* Style the header */
-.header {
+.body {
   background-color: #f44336;
   padding: 30px 40px;
   color: white;
@@ -79,7 +81,7 @@ ul li.checked::before {
 }
 
 /* Clear floats after the header */
-.header:after {
+.body:after {
   content: "";
   display: table;
   clear: both;
@@ -97,7 +99,7 @@ input {
 }
 
 /* Style the "Add" button */
-.addBtn {
+.taskInput {
   padding: 10px;
   width: 25%;
   background: #d9d9d9;
@@ -110,6 +112,6 @@ input {
   border-radius: 0;
 }
 
-.addBtn:hover {
+.taskInput:hover {
   background-color: #bbb;
 }
