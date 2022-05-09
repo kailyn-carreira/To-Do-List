@@ -19,9 +19,10 @@ function display() {
         const taskDelete = document.createElement('button')
         taskLi.className = 'listItem'
         taskDelete.className = 'deleteItem'
+        taskEdit.className = "editItem"
         taskStrong.innerText = `${task.task}`
         taskStrong.style.cursor = 'pointer'
-        taskEdit.innerText = 'Edit'
+        taskEdit.innerHTML = '<img src="editbtn.png" width="25" height="20"/>'
         taskDelete.innerText = 'X'
         taskStrong.addEventListener('click', e => {
             task.isComplete = !task.isComplete
@@ -37,7 +38,7 @@ function display() {
         })
         taskEdit.addEventListener('click', e => {
             taskLi.removeChild(taskEdit)
-            taskStrong.innerHTML = `<form action="" data-form-${task.id}><input type="text" data-edit-${task.id} value="${task.task}"/><button type="submit">Edit</button></form>`
+            taskStrong.innerHTML = `<form action="" data-form-${task.id}><input type="text" data-edit-${task.id} value="${task.task}"/><button type="submit"> Edit</button></form>`
             const editForm = document.querySelector(`[data-form-${task.id}]`)
             const edit = document.querySelector(`[data-edit-${task.id}]`)
             editForm.addEventListener('submit', e => {
@@ -65,6 +66,7 @@ newTaskForm.addEventListener('submit', e => {
     saveAndDisplay()
 })
 
+/* copied from w3schools*/
 const list = document.querySelector('ul')
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'li') {
